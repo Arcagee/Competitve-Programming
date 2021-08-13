@@ -1,0 +1,1 @@
+{"name":"Local: rfsf","url":"/home/ankush/CP/Codeforces/Practice/rfsf.cpp","tests":[{"id":1623733964978,"input":"4\n7\n10 7 4 6 8 10 11\n4\n9 7 5 3\n9\n5 5 4 5 5 5 4 5 6\n10\n5 4 3 2 1 2 3 4 5 6","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/CP/Codeforces/Practice/rfsf.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: Min_Coins_topdown","url":"/home/ankush/CP/DP/Min_Coins_topdown.cpp","tests":[{"id":1628270030732,"input":"1\n30 3\n25 10 15","output":"2"},{"id":1628272544271,"input":"2\n30 3\n25 10 15\n15 1\n4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/CP/DP/Min_Coins_topdown.cpp","group":"local","local":true}

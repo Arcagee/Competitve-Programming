@@ -1,0 +1,1 @@
+{"name":"Local: 456A","url":"/home/ankush/CP/Codeforces/Practice/456A.cpp","tests":[{"id":1623735058328,"input":"2\n1 2\n2 1\n","output":""},{"id":1623735107943,"input":"3\n4 8\n1 6\n3 1","output":"Poor Alex"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/CP/Codeforces/Practice/456A.cpp","group":"local","local":true}

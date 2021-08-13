@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"/home/ankush/CP/CodeChef/COOK131/B.cpp","tests":[{"id":1627479763595,"input":"2\n6\n2 2 4 4 2 6 \n2\n16 8\n","output":"4\n2"},{"id":1627496868213,"input":"1\n4\n6 6 6 6","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/CP/CodeChef/COOK131/B.cpp","group":"local","local":true}

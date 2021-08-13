@@ -1,0 +1,1 @@
+{"name":"Local: Count_Set_Bits","url":"/home/ankush/CP/Algorithms/BitManipulation/Count_Set_Bits.cpp","tests":[{"id":1626265740807,"input":"5","output":"2"},{"id":1626710473525,"input":"10","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/CP/Algorithms/BitManipulation/Count_Set_Bits.cpp","group":"local","local":true}

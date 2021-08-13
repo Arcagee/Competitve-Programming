@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define ip cin>>
+#define op cout<<
+#define int long long
+signed main(){
+    fast
+    int t, n;
+    cin>>t;
+    while(t--){
+        int n;
+        ip n;
+        int cnt1 = 0, cnt2 = 0;
+        for(int i = 0; i < n; i++) {
+            int x; ip x;
+            if(x == 1) cnt1++;
+            if(x == 2) cnt2++;
+        }
+
+        if(cnt1 % 2 != 0){ 
+            op "NO" << endl;
+        } else if(cnt1 % 2 == 0 && cnt1 > 0) {
+            op "YES" << endl;
+        } else if(cnt1 == 0 && cnt2 % 2 == 0) {
+            op "YES" << endl;
+        } else {
+            op "NO" << endl;
+        }
+    }
+}

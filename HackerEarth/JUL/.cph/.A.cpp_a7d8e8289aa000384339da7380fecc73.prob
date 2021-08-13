@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"/home/ankush/CP/HackerEarth/JUL/A.cpp","tests":[{"id":1626790420503,"input":"1\n4 4\n17 4\n20 2\n10 7\n15 5","output":"37"},{"id":1626791417071,"input":"1\n4 10\n23 10\n14 2\n15 5\n9 1","output":"38"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/CP/HackerEarth/JUL/A.cpp","group":"local","local":true}

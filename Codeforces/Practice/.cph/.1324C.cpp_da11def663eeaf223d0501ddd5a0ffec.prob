@@ -1,0 +1,1 @@
+{"name":"Local: 1324C","url":"/home/ankush/CP/Codeforces/Practice/1324C.cpp","tests":[{"id":1624711926135,"input":"6\nLRLRRLL\nL\nLLR\nRRRR\nLLLLLL\nR","output":"3\n2\n3\n1\n7\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/CP/Codeforces/Practice/1324C.cpp","group":"local","local":true}

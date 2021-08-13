@@ -1,0 +1,1 @@
+{"name":"Local: Min_steps_to_one_topdown","url":"/home/ankush/CP/DP/Min_steps_to_one_topdown.cpp","tests":[{"id":1628268553879,"input":"5\n1\n2\n3\n4\n10","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/CP/DP/Min_steps_to_one_topdown.cpp","group":"local","local":true}

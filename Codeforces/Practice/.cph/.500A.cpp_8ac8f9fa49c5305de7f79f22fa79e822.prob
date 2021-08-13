@@ -1,0 +1,1 @@
+{"name":"Local: 500A","url":"/mnt/c/Users/1208a/Documents/Codeforces/Practice/500A.cpp","tests":[{"id":1623308527776,"input":"8 4\n1 2 1 2 1 2 1\n","output":""},{"id":1623308568916,"input":"8 5\n1 2 1 2 1 1 1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/mnt/c/Users/1208a/Documents/Codeforces/Practice/500A.cpp","group":"local","local":true}

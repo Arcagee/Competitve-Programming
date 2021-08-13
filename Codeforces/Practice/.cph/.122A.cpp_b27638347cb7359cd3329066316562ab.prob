@@ -1,0 +1,1 @@
+{"name":"Local: 122A","url":"/mnt/c/Users/1208a/Documents/Codeforces/Practice/122A.cpp","tests":[{"id":1623342372481,"input":"abs\nAbz\n","output":""},{"id":1623342514678,"input":"abcdefg\nAbCdEfF\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/mnt/c/Users/1208a/Documents/Codeforces/Practice/122A.cpp","group":"local","local":true}

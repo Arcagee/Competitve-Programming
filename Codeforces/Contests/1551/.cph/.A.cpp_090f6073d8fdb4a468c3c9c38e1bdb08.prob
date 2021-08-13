@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"/home/ankush/CP/Codeforces/Contests/1551/A.cpp","tests":[{"id":1627050477361,"input":"6\n1000\n30\n1\n32\n1000000000\n5\n","output":"334 333\n10 10\n1 0\n10 11\n333333334 333333333\n1 2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/CP/Codeforces/Contests/1551/A.cpp","group":"local","local":true}
