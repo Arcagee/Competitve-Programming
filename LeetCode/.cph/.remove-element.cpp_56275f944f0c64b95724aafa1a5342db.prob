@@ -1,0 +1,1 @@
+{"name":"Local: remove-element","url":"/home/ankush/Documents/Competitve-Programming/LeetCode/remove-element.cpp","tests":[{"id":1629186095351,"input":"1\n4\n3 2 2 3","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/ankush/Documents/Competitve-Programming/LeetCode/remove-element.cpp","group":"local","local":true}
