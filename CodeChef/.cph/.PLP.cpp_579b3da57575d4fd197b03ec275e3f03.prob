@@ -1,0 +1,1 @@
+{"name":"Local: PLP","url":"c:\\Users\\Ankush Kumar\\Documents\\Competitve-Programming\\CodeChef\\PLP.cpp","tests":[{"id":1646159842765,"input":"3\n3\n4 2 3\n6\n1 1 1 1 1 1\n1\n5\n","output":"5\n3\n5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Ankush Kumar\\Documents\\Competitve-Programming\\CodeChef\\PLP.cpp","group":"local","local":true}

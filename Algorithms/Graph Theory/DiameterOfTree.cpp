@@ -63,7 +63,7 @@ signed main() {
             diaNode = i;
         }
     }
-
+    // REMEMBER TO CLEAR THE ADJACENCY LIST IN THESE CASES 
     for(int i = 1; i <= n; i++) {
         vis[i] = 0;
         dist[i] = 0;
@@ -76,6 +76,6 @@ signed main() {
             d = dist[i];
         }
     }
-    
+
     op d << " " << endl;
 }

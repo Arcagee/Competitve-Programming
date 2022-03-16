@@ -24,7 +24,8 @@ int kadane(vector<int> a, int n) {
 
 signed main(){
     fast
-    vector<int> a = {2, 3, -5, 4};
-    int len = a.size();
-    op kadane(a, len) << endl;
+    int n;
+    ip n;
+    vector<int> a(n);
+    op kadane(a, n) << endl;
 }

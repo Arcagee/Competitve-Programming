@@ -1,11 +1,18 @@
 {
     "files.associations": {
+        "*.ejs": "html",
         "*.html": "html",
         "**/templates/**/*.html": "django-html",
         "cmath": "cpp",
         "ostream": "cpp",
         "iostream": "cpp",
         "map": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "cstdlib": "cpp"
     }
 }
