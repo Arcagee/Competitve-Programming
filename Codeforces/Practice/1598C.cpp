@@ -48,7 +48,6 @@ signed main() {
                     ans += mp[par];
                 } 
             }
-
             op ans << endl;
         }
     }
