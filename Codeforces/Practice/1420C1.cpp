@@ -48,22 +48,30 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        op ("ee" < "lafzximxh");
+        int q; ip n >> q;
+        vi a(n);
+        for(int i = 0; i < n; i++) {
+            ip a[i];
+        }
+        if(n == 1) {
+            cout << a[0] << endl;
+            continue;
+        }
+        int res = 0;
+        for(int i = 0; i < n; i++) {
+            if(i == 0 && a[i] > a[i + 1]) {
+                res += a[i];
+            } else if(i == n - 1 && a[i] > a[i - 1]) {
+                res += a[i];
+            } else if(i > 0 && i < n - 1 && a[i] > a[i + 1] && a[i] > a[i - 1]) {
+                res += a[i];
+            } else if(i > 0 && i < n - 1 && a[i] < a[i - 1] && a[i] < a[i + 1]) {
+                res -= a[i];
+            }
+        }
+        // deb(v);
+        op (res) << endl;
     }
 }
 
-// [null, "kimchi", "ramen", null, "sushi", null, "ramen"]
-
-// ["FoodRatings","changeRating","highestRated","changeRating","changeRating","changeRating","highestRated","highestRated"]
-// [[["emgqdbo","jmvfxjohq","qnvseohnoe","yhptazyko","ocqmvmwjq"],
-// ["snaxol","snaxol","snaxol","fajbervsj","fajbervsj"],
-// [2,6,18,6,5]],
-// ["qnvseohnoe",11],["fajbervsj"],["emgqdbo",3],["jmvfxjohq",9],["emgqdbo",14],["fajbervsj"],["snaxol"]]
-
-
-// ["FoodRatings","changeRating","highestRated","highestRated","highestRated"]
-// [[["cpctxzh","bryvgjqmj","wedqhqrmyc","ee","lafzximxh","lojzxfel","flhs"],
-// ["wbhdgqphq","wbhdgqphq","mxxajogm","wbhdgqphq","wbhdgqphq","mxxajogm","mxxajogm"],
-// [15,5,7,16,16,10,13]],
-// ["lojzxfel",1],["mxxajogm"],["wbhdgqphq"],["mxxajogm"]]
-// [null,null,"flhs","ee","flhs"]
+ // Pick local maxima and minima

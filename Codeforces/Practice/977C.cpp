@@ -46,24 +46,31 @@ const int MOD = 1000000007;
 signed main() {
     tsukuyomi
     int t = 1, n;
-    cin >> t;
+    // cin >> t;
     while(t--) {
-        op ("ee" < "lafzximxh");
+        int k;
+        ip n >> k;
+        vi a(n);
+        for(int i = 0; i < n; i++) {
+            ip a[i];
+        }
+        sort(all(a));
+        if(k == n) {
+            // if(a[n - 1] <= 1e9) { 
+                op a[n - 1] << endl;
+            // } 
+            continue;
+        }
+
+        if(k == 0) {
+            if(a[0] != 1) {
+                op a[0] - 1 << endl;
+            } else op -1 << endl;
+            continue;
+        }
+        int ans = -1;
+        // op 1e9 + 1 << endl;
+        if(a[k] != a[k - 1] && (a[k] - a[k - 1]) >= 1 && a[k - 1] < 1e9) ans = a[k - 1];
+        op ans << endl; 
     }
 }
-
-// [null, "kimchi", "ramen", null, "sushi", null, "ramen"]
-
-// ["FoodRatings","changeRating","highestRated","changeRating","changeRating","changeRating","highestRated","highestRated"]
-// [[["emgqdbo","jmvfxjohq","qnvseohnoe","yhptazyko","ocqmvmwjq"],
-// ["snaxol","snaxol","snaxol","fajbervsj","fajbervsj"],
-// [2,6,18,6,5]],
-// ["qnvseohnoe",11],["fajbervsj"],["emgqdbo",3],["jmvfxjohq",9],["emgqdbo",14],["fajbervsj"],["snaxol"]]
-
-
-// ["FoodRatings","changeRating","highestRated","highestRated","highestRated"]
-// [[["cpctxzh","bryvgjqmj","wedqhqrmyc","ee","lafzximxh","lojzxfel","flhs"],
-// ["wbhdgqphq","wbhdgqphq","mxxajogm","wbhdgqphq","wbhdgqphq","mxxajogm","mxxajogm"],
-// [15,5,7,16,16,10,13]],
-// ["lojzxfel",1],["mxxajogm"],["wbhdgqphq"],["mxxajogm"]]
-// [null,null,"flhs","ee","flhs"]

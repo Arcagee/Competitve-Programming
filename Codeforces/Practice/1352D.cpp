@@ -48,22 +48,36 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        op ("ee" < "lafzximxh");
+        ip n;
+        deque<int> dq;
+        for(int i = 0; i < n; i++) {
+            int x; ip x;
+            dq.push_back(x);
+        }
+
+        int moves = 0, alice = 0, bob = 0, curr_alice = 0, curr_bob = 0;
+        bool flag = 0;
+        while(!dq.empty()) {
+            if(flag == 0) {
+                curr_alice = 0;
+                while(!dq.empty() && curr_bob >= curr_alice) {
+                    curr_alice += (dq.front());
+                    dq.pop_front();
+                }
+                flag = 1;
+                alice += curr_alice;
+            } else {
+                curr_bob = 0;
+                while(!dq.empty() && curr_alice >= curr_bob) {
+                    curr_bob += (dq.back());
+                    dq.pop_back();
+                }
+                flag = 0;
+                bob += curr_bob;
+            }
+            moves++;
+        }
+
+        op moves << " " << alice << " " << bob << endl;
     }
 }
-
-// [null, "kimchi", "ramen", null, "sushi", null, "ramen"]
-
-// ["FoodRatings","changeRating","highestRated","changeRating","changeRating","changeRating","highestRated","highestRated"]
-// [[["emgqdbo","jmvfxjohq","qnvseohnoe","yhptazyko","ocqmvmwjq"],
-// ["snaxol","snaxol","snaxol","fajbervsj","fajbervsj"],
-// [2,6,18,6,5]],
-// ["qnvseohnoe",11],["fajbervsj"],["emgqdbo",3],["jmvfxjohq",9],["emgqdbo",14],["fajbervsj"],["snaxol"]]
-
-
-// ["FoodRatings","changeRating","highestRated","highestRated","highestRated"]
-// [[["cpctxzh","bryvgjqmj","wedqhqrmyc","ee","lafzximxh","lojzxfel","flhs"],
-// ["wbhdgqphq","wbhdgqphq","mxxajogm","wbhdgqphq","wbhdgqphq","mxxajogm","mxxajogm"],
-// [15,5,7,16,16,10,13]],
-// ["lojzxfel",1],["mxxajogm"],["wbhdgqphq"],["mxxajogm"]]
-// [null,null,"flhs","ee","flhs"]

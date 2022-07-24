@@ -48,22 +48,18 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        op ("ee" < "lafzximxh");
+        int x, m;
+        ip n >> x >> m;
+        pair<int, int> p = {x, x};
+        while(m--) {
+            int i, j;
+            ip i >> j;
+            if((i <= p.first && j >= p.second) || (i < p.first && j >= p.first) || (i <= p.second && j >= p.second)) {
+                p.first = min(i, p.first);
+                p.second = max(j, p.second);
+            }
+        }
+
+        cout << (p.second - p.first + 1) << endl;
     }
 }
-
-// [null, "kimchi", "ramen", null, "sushi", null, "ramen"]
-
-// ["FoodRatings","changeRating","highestRated","changeRating","changeRating","changeRating","highestRated","highestRated"]
-// [[["emgqdbo","jmvfxjohq","qnvseohnoe","yhptazyko","ocqmvmwjq"],
-// ["snaxol","snaxol","snaxol","fajbervsj","fajbervsj"],
-// [2,6,18,6,5]],
-// ["qnvseohnoe",11],["fajbervsj"],["emgqdbo",3],["jmvfxjohq",9],["emgqdbo",14],["fajbervsj"],["snaxol"]]
-
-
-// ["FoodRatings","changeRating","highestRated","highestRated","highestRated"]
-// [[["cpctxzh","bryvgjqmj","wedqhqrmyc","ee","lafzximxh","lojzxfel","flhs"],
-// ["wbhdgqphq","wbhdgqphq","mxxajogm","wbhdgqphq","wbhdgqphq","mxxajogm","mxxajogm"],
-// [15,5,7,16,16,10,13]],
-// ["lojzxfel",1],["mxxajogm"],["wbhdgqphq"],["mxxajogm"]]
-// [null,null,"flhs","ee","flhs"]

@@ -48,22 +48,31 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        op ("ee" < "lafzximxh");
+        int x; ip x;
+        int prev = 1, prev_area = 1;
+        if(prev == x) {
+            op 1 << endl;
+            continue;
+        }
+        int cnt = 1, area = 1, inc = 1; x-= 1;
+        for(int i = 3; area <= x; i += (1 << (inc))) {
+            area = prev_area * 2 + ((i - prev) * (i - prev));
+            prev = i;
+            prev_area = area;
+            if(area > x) break;
+            x -= area;
+            cnt++;
+            inc++;
+        }
+
+        op cnt << endl;
     }
 }
 
-// [null, "kimchi", "ramen", null, "sushi", null, "ramen"]
-
-// ["FoodRatings","changeRating","highestRated","changeRating","changeRating","changeRating","highestRated","highestRated"]
-// [[["emgqdbo","jmvfxjohq","qnvseohnoe","yhptazyko","ocqmvmwjq"],
-// ["snaxol","snaxol","snaxol","fajbervsj","fajbervsj"],
-// [2,6,18,6,5]],
-// ["qnvseohnoe",11],["fajbervsj"],["emgqdbo",3],["jmvfxjohq",9],["emgqdbo",14],["fajbervsj"],["snaxol"]]
-
-
-// ["FoodRatings","changeRating","highestRated","highestRated","highestRated"]
-// [[["cpctxzh","bryvgjqmj","wedqhqrmyc","ee","lafzximxh","lojzxfel","flhs"],
-// ["wbhdgqphq","wbhdgqphq","mxxajogm","wbhdgqphq","wbhdgqphq","mxxajogm","mxxajogm"],
-// [15,5,7,16,16,10,13]],
-// ["lojzxfel",1],["mxxajogm"],["wbhdgqphq"],["mxxajogm"]]
-// [null,null,"flhs","ee","flhs"]
+/* 
+The number of disjoint squares only increase on certain heights
+1, 3, 7, 15, .., i.e.
+So we just calculate the area on these points and if it is less than
+'x' we subtract it from x and keep doing this until we cannot form any
+new squares.
+*/

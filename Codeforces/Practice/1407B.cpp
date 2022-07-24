@@ -48,22 +48,34 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        op ("ee" < "lafzximxh");
+        ip n;
+        int maxi = 0;
+        vi a(n), even, odd;
+        for(int i = 0; i < n; i++) {
+            ip a[i];
+            maxi = max(maxi, a[i]);
+        }
+
+        sort(rall(a));
+        int cnt = 1;
+        cout << maxi << " ";
+        while(cnt != a.size()) {
+            int maxgcd = 0, ele = 0, idx = -1;
+            for(int i = 1; i < n; i++) {
+                if(a[i] != -1) {
+                    int gcd = __gcd(maxi, a[i]);
+                    if(gcd > maxgcd) {
+                        maxgcd = gcd;
+                        ele = a[i];
+                        idx = i;
+                    }
+                }
+            }
+            cnt++;
+            maxi = maxgcd;
+            a[idx] = -1;
+            cout << ele << " ";
+        }        
+        cout << endl;
     }
 }
-
-// [null, "kimchi", "ramen", null, "sushi", null, "ramen"]
-
-// ["FoodRatings","changeRating","highestRated","changeRating","changeRating","changeRating","highestRated","highestRated"]
-// [[["emgqdbo","jmvfxjohq","qnvseohnoe","yhptazyko","ocqmvmwjq"],
-// ["snaxol","snaxol","snaxol","fajbervsj","fajbervsj"],
-// [2,6,18,6,5]],
-// ["qnvseohnoe",11],["fajbervsj"],["emgqdbo",3],["jmvfxjohq",9],["emgqdbo",14],["fajbervsj"],["snaxol"]]
-
-
-// ["FoodRatings","changeRating","highestRated","highestRated","highestRated"]
-// [[["cpctxzh","bryvgjqmj","wedqhqrmyc","ee","lafzximxh","lojzxfel","flhs"],
-// ["wbhdgqphq","wbhdgqphq","mxxajogm","wbhdgqphq","wbhdgqphq","mxxajogm","mxxajogm"],
-// [15,5,7,16,16,10,13]],
-// ["lojzxfel",1],["mxxajogm"],["wbhdgqphq"],["mxxajogm"]]
-// [null,null,"flhs","ee","flhs"]
