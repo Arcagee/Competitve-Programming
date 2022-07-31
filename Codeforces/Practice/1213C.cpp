@@ -41,46 +41,26 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 const int INF = 1e18;
 const int MOD = 1000000007;
  
-int turn(deque<int> &dq, int p1, int p2, bool &flag) {
-    while(!dq.empty() && p2 >= p1) {
-        if(flag) { 
-            p1 += dq.back();
-            dq.pop_back();
-        } else {
-            p1 += dq.front();
-            dq.pop_front();
-        }
-    }   
-    flag ^= 1;
-
-    return p1;
-}
+ 
  
 signed main() {
     tsukuyomi
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ip n;
-        deque<int> dq;
-        for(int i = 0; i < n; i++) {
-            int x; ip x;
-            dq.push_back(x);
+        int m; 
+        ip n >> m;
+        int sum = 0, cnt = 0;
+        for(int i = m; i <= (m * 10); i += m) {
+            sum += (i % 10);
         }
 
-        int moves = 0, alice = 0, bob = 0, curr_alice = 0, curr_bob = 0;
-        bool flag = 0;
-        while(!dq.empty()) {
-            if(flag == 0) {
-                curr_alice = turn(dq, 0, curr_bob, flag);
-                alice += curr_alice;
-            } else {
-                curr_bob = turn(dq, 0, curr_alice, flag);
-                bob += curr_bob;
-            }
-            moves++;
+        sum = (n/(m * 10)) * sum;
+        int val = (n/(m * 10)) * m * 10;
+        for(int i = val; i <= n; i += m) {
+            sum += (i % 10);
         }
 
-        op moves << " " << alice << " " << bob << endl;
+        op sum << endl;
     }
 }

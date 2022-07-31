@@ -41,46 +41,39 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 const int INF = 1e18;
 const int MOD = 1000000007;
  
-int turn(deque<int> &dq, int p1, int p2, bool &flag) {
-    while(!dq.empty() && p2 >= p1) {
-        if(flag) { 
-            p1 += dq.back();
-            dq.pop_back();
-        } else {
-            p1 += dq.front();
-            dq.pop_front();
-        }
-    }   
-    flag ^= 1;
-
-    return p1;
-}
+ 
  
 signed main() {
     tsukuyomi
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ip n;
-        deque<int> dq;
+        int k;
+        ip n >> k;
+        vi a(n);
         for(int i = 0; i < n; i++) {
-            int x; ip x;
-            dq.push_back(x);
+            ip a[i];
         }
 
-        int moves = 0, alice = 0, bob = 0, curr_alice = 0, curr_bob = 0;
-        bool flag = 0;
-        while(!dq.empty()) {
-            if(flag == 0) {
-                curr_alice = turn(dq, 0, curr_bob, flag);
-                alice += curr_alice;
-            } else {
-                curr_bob = turn(dq, 0, curr_alice, flag);
-                bob += curr_bob;
-            }
-            moves++;
+        vi peaks(n);
+        for(int i = 1; i < n - 1; i++) {
+            if(a[i] > a[i - 1] && a[i] > a[i + 1]) {
+                peaks[i] = 1 + peaks[i - 1];
+            } else peaks[i] = peaks[i - 1];
         }
 
-        op moves << " " << alice << " " << bob << endl;
+        // deb(peaks);
+        int l = 0, r = k - 1, maxPeak = 0, ans = 1, idx = 1;
+        while(r < n) {
+            int peakVal = peaks[r - 1] - peaks[l];
+            if(peakVal > maxPeak) {
+                // deb(maxPeak);
+                maxPeak = peakVal;
+                ans = maxPeak + 1;
+                idx = l + 1;
+            } l++; r++;
+        }
+        
+        op ans << " " << idx << endl;
     }
 }

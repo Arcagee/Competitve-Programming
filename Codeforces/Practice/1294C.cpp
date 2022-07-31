@@ -41,20 +41,7 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 const int INF = 1e18;
 const int MOD = 1000000007;
  
-int turn(deque<int> &dq, int p1, int p2, bool &flag) {
-    while(!dq.empty() && p2 >= p1) {
-        if(flag) { 
-            p1 += dq.back();
-            dq.pop_back();
-        } else {
-            p1 += dq.front();
-            dq.pop_front();
-        }
-    }   
-    flag ^= 1;
-
-    return p1;
-}
+ 
  
 signed main() {
     tsukuyomi
@@ -62,25 +49,28 @@ signed main() {
     cin >> t;
     while(t--) {
         ip n;
-        deque<int> dq;
-        for(int i = 0; i < n; i++) {
-            int x; ip x;
-            dq.push_back(x);
-        }
-
-        int moves = 0, alice = 0, bob = 0, curr_alice = 0, curr_bob = 0;
-        bool flag = 0;
-        while(!dq.empty()) {
-            if(flag == 0) {
-                curr_alice = turn(dq, 0, curr_bob, flag);
-                alice += curr_alice;
-            } else {
-                curr_bob = turn(dq, 0, curr_alice, flag);
-                bob += curr_bob;
+        vector<int> ans;
+        for(int i = 2; i <= sqrt(n); i++) {
+            if(n % i == 0) {
+                ans.pb(i);
+                for(int j = i + 1; j <= sqrt(n/i); j++) {
+                    int val = (n/i);
+                    if(val % j == 0) {
+                        ans.pb(j);
+                        if(val/j >= 2 && val/j != j && val/j != i)
+                            ans.pb(val/j);
+                    }
+                    if(ans.size() == 3) break;
+                }
             }
-            moves++;
+            if(ans.size() == 3) break;
+            ans.clear();
         }
-
-        op moves << " " << alice << " " << bob << endl;
+        // deb(ans);
+        if(ans.size() == 3) {
+            op "YES" << endl;
+            for(auto x : ans) op x << " ";
+        } else op "NO";
+        op endl;
     }
 }

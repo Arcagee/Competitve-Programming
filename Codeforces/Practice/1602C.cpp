@@ -41,20 +41,7 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 const int INF = 1e18;
 const int MOD = 1000000007;
  
-int turn(deque<int> &dq, int p1, int p2, bool &flag) {
-    while(!dq.empty() && p2 >= p1) {
-        if(flag) { 
-            p1 += dq.back();
-            dq.pop_back();
-        } else {
-            p1 += dq.front();
-            dq.pop_front();
-        }
-    }   
-    flag ^= 1;
-
-    return p1;
-}
+ 
  
 signed main() {
     tsukuyomi
@@ -62,25 +49,26 @@ signed main() {
     cin >> t;
     while(t--) {
         ip n;
-        deque<int> dq;
+        vi a(n);
         for(int i = 0; i < n; i++) {
-            int x; ip x;
-            dq.push_back(x);
+            ip a[i];
         }
 
-        int moves = 0, alice = 0, bob = 0, curr_alice = 0, curr_bob = 0;
-        bool flag = 0;
-        while(!dq.empty()) {
-            if(flag == 0) {
-                curr_alice = turn(dq, 0, curr_bob, flag);
-                alice += curr_alice;
-            } else {
-                curr_bob = turn(dq, 0, curr_alice, flag);
-                bob += curr_bob;
+        vi setCnt(31, 0);
+        for(int i = 0; i <= 30; i++) {
+            for(int j = 0; j < n; j++) {
+                if(a[j] & 1 << i) setCnt[i]++; 
             }
-            moves++;
         }
-
-        op moves << " " << alice << " " << bob << endl;
-    }
+        for(int k = 1; k <= n; k++) {
+            bool flag = true;
+            for(int i = 0; i <= 30; i++) {
+                if(setCnt[i] % k != 0) {
+                    flag = false;
+                    break;
+                } 
+            }
+            if(flag) op k << " ";
+        } op endl;
+    } 
 }
