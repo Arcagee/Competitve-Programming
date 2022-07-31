@@ -54,25 +54,30 @@ signed main() {
             ip a[i];
         }
 
+        vi pref(n), suff(n);
+        for(int i = 1; i < n - 1; i++) {
+            pref[i] = pref[i - 1];
+            if(i % 2 != 0) {
+                pref[i] += max(0ll, max(a[i - 1], a[i + 1]) - a[i] + 1);
+            } 
+        }
+
+        for(int i = n - 2; i >= 1; --i) {
+            suff[i] = suff[i + 1];
+            if(i % 2 == 0) {
+                suff[i] += max(0ll, max(a[i - 1], a[i + 1]) - a[i] + 1);
+            }
+        }
+
         if(n % 2 != 0) {
-            int ans = 0;
-            for(int i = 1; i < n - 1; i++) {
-                if(i % 2 != 0 && (max(a[i - 1], a[i + 1]) >= a[i])) {
-                    ans += (max(a[i - 1], a[i + 1]) - a[i]) + 1;
-                }
+            cout << pref[n - 2] << endl;
+        } else {
+            int ans = INF;
+            for(int i = 1; i < n; i++) {
+                ans = min(ans, pref[i - 1] + suff[i]);
             }
 
-            op ans << endl;
-        } else {
-            vector<int> dp(n + 1);
-            for(int i = 1; i < n - 1; i++) {
-                if(max(a[i - 1], a[i + 1]) >= a[i]) {
-                    int val = max(a[i - 1], a[i + 1]) - a[i] + 1;
-                    dp[i] = min(d[i - 2], dp[i - 1]) + val;
-                }
-            }
-            deb(ans1, ans2);
-            op min(ans1, ans2) << endl;
+            cout << ans << endl;
         }
     }
 }
