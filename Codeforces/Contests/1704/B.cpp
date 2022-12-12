@@ -48,6 +48,29 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        int x;
+        cin >> n >> x;
+        vi a(n);
+        for(int i = 0; i < n; i++) {
+            ip a[i];
+        }
+
+        vi range(2, 0);
+        range[0] = a[0] - x; range[1] = a[0] + x;
+        int ans = 0;
+        for(int i = 1; i < n; i++) {
+            vector<int> temp_range(2, 0);
+            temp_range[0] = a[i] - x; temp_range[1] = a[i] + x;
+            if((temp_range[1] < range[0]) || (temp_range[0] > range[1])) {
+                ans++;
+                range[0] = temp_range[0];
+                range[1] = temp_range[1];
+            } else {
+                range[0] = max(temp_range[0], range[0]);
+                range[1] = min(temp_range[1], range[1]);
+            }
+        }
+
+        cout << ans << endl;
     }
 }

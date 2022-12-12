@@ -48,6 +48,29 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        int a, b;
+        cin >> a >> b;
+        string s, k;
+        cin >> s >> k;
+        bool ok = false;
+        for(int i = a - b; i >= 0; i--) {
+            if(s[i] == k[0]) {
+                ok = true;
+                break;
+            }
+        }
+        string ans = "YES";
+        if(ok) {
+            for(int i = a - 1, j = b - 1; j >= 1; i--, j--) {
+                if(s[i] != k[j]) ans = "NO";
+            }
+            // for(int i = b + 1, j = 1; i < a && j < b; i++, j++) {
+            //     if(s[i] != k[j]) ans = "NO";
+            //     deb(i, k[j]);
+            // }
+            if(ok) {
+                op ans << endl;
+            } 
+        } else op "NO" << endl;
     }
 }

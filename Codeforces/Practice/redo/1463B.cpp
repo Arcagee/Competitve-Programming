@@ -48,6 +48,6 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        
     }
 }

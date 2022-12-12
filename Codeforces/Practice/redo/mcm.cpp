@@ -40,14 +40,26 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
  
 const int INF = 1e18;
 const int MOD = 1000000007;
- 
- 
+vvi dp(100, vi (100, -1));
+int minCost(vi &matrices, int lo, int hi) {
+    if(lo >= hi) return 0;
+    if(dp[lo][hi] != -1) return dp[lo][hi];
+    int mincost = INT_MAX;
+    for(int k = lo; k < hi; k++) {
+        int tempCost = minCost(matrices, lo, k) +
+                       minCost(matrices, k + 1, hi) +
+                       (matrices[lo - 1] * matrices[k] * matrices[hi]);
+        mincost = min(mincost, tempCost);
+    }
+    return dp[lo][hi] = mincost;
+}
  
 signed main() {
     tsukuyomi
     int t = 1, n;
-    cin >> t;
+    // cin >> t;
     while(t--) {
-        ;
+        vi matrices = {40, 20, 30, 10, 30};
+        op minCost(matrices, 1, matrices.size() - 1);
     }
 }

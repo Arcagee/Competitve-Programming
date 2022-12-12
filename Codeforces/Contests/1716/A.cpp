@@ -48,6 +48,22 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        ip n;
+        if(n == 1) {
+            cout << 2 << endl;
+            continue;
+        }
+
+        if(n % 3 == 0) {
+            cout << n/3 << endl;
+            continue;
+        }
+        int cnt = 0;
+        while(n > 0 && n % 3 != 0) {
+            n -= 2;
+            cnt++;
+        }
+
+        cout << cnt + (n / 3) << endl;
     }
 }

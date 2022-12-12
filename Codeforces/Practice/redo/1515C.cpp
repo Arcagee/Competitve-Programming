@@ -48,6 +48,30 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        int m, x;
+        cin >> n >> m >> x;
+        vi a(n);
+        for(int i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+
+        set<pair<int, int>> st;
+        for(int i = 1; i <= m; i++) {
+            st.insert({0ll, i});
+        }
+        
+        for(int i = 0; i < n; i++) {
+            pair<int, int> temp = *st.begin();
+            temp.first += a[i];
+            a[i] = temp.second;
+            st.erase(st.begin());
+            st.insert(temp);
+        }
+
+        // as heights of blocks donot exceed x then we cannot get a difference greater
+        // than x in a correct array
+        cout << "YES" << endl;
+        for(auto x : a) cout << x << " ";
+        cout << endl;
     }
 }

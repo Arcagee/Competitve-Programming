@@ -41,13 +41,45 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 const int INF = 1e18;
 const int MOD = 1000000007;
  
- 
+void precomp(vi &fact) {
+    fact[1] = 1;
+    for(int i = 2; i <= 10; i++) {
+        fact[i] = fact[i - 1] * i;
+    }
+}
  
 signed main() {
     tsukuyomi
     int t = 1, n;
-    cin >> t;
+    vector<int> fact(11);
+    fact[0] = 1;
+    precomp(fact);
+    // cin >> t;
     while(t--) {
-        ;
+        string s, k;
+        ip s >> k;
+        int pos = 0, neg = 0;
+        for(int i = 0; i < s.size(); i++) {
+            (s[i] == '+') ? pos++ : neg++;
+        }
+
+        int posk = 0, negk = 0;
+        for(int i = 0; i < k.size(); i++) {
+            if(k[i] == '?') continue;
+            (k[i] == '+') ? posk++ : negk++;
+        }
+
+        if(posk == pos && negk == neg) {
+            cout << 1 << endl;
+            continue;
+        }
+        if(posk > pos || negk > neg) {
+            cout << 0 << endl;
+            continue;
+        } else {
+            int qcount = k.size() - (posk + negk);
+            int need_pos = pos - posk, need_neg = qcount - need_pos;
+            cout << setprecision(15) << (((fact[qcount] * 1.0) / (fact[need_pos] * fact[need_neg])) / pow(2, qcount)) << endl;
+        }
     }
 }

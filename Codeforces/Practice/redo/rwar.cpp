@@ -48,6 +48,23 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        int k;
+        cin >> n >> k;
+        vi a(n);
+        for(int i = 0; i < n; i++) {
+            ip a[i];
+        }
+        int sum = 0, maxSum = 0;
+        for(int i = 0; i < k; i++) {
+            sum += a[i];
+        }
+        maxSum = sum;
+        for(int right = k; right < n; right++) {
+            sum += a[right];
+            sum -= a[right - k];
+            maxSum = max(maxSum, sum);
+        }
+
+        op maxSum << endl;
     }
 }

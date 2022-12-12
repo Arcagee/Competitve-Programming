@@ -46,8 +46,25 @@ const int MOD = 1000000007;
 signed main() {
     tsukuyomi
     int t = 1, n;
-    cin >> t;
+    // cin >> t;
     while(t--) {
-        ;
+        ip n;
+        string s;
+        cin >> s;
+        vector<char> v(10);
+        for(int i = 1; i <= 9; i++) {
+            ip v[i];
+        }
+        bool swap = 0;
+        for(int i = 0; i < s.size(); i++) {
+            if(s[i] < v[s[i] - '0']) { 
+                s[i] = v[s[i] - '0'];
+                swap = 1;
+            } else if(swap && v[s[i] - '0'] == s[i]) { 
+                continue;
+            } else if(swap) break;
+        }
+
+        cout << s << endl;
     }
 }

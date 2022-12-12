@@ -40,14 +40,26 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
  
 const int INF = 1e18;
 const int MOD = 1000000007;
- 
- 
- 
+
 signed main() {
     tsukuyomi
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        ip n;
+        mpii mp;
+        for(int i = 0; i < n; i++) {
+            int x; ip x;
+            mp[x]++;
+        }
+        // This actually made me feel dumb for thinking so complex
+        int maxi = 0;
+        for(auto x : mp) maxi = max(maxi, x.second);
+        if(maxi > n/2) {
+            cout << n - 2 * (n - maxi) << endl;
+        } else {
+            int ans = (n % 2 == 0) ? 0 : 1;
+            cout << ans << endl;
+        }
     }
 }

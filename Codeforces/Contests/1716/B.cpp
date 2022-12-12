@@ -48,6 +48,32 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        ip n;
+        vector<int> a(n);
+        for(int i = 0; i < n; i++) {
+            a[i] = i + 1;
+        }
+
+        vvi ans;
+        int low = 0, high = n - 1;
+        ans.pb(a);
+        swap(a[low++], a[high--]);
+        ans.pb(a);
+
+        while(low <= high) {
+            swap(a[low], a[low - 1]);
+            ans.pb(a); low++;
+            if(low > high) break;
+            swap(a[high], a[high + 1]);
+            ans.pb(a); high--;
+        }
+
+        cout << ans.size() << endl;
+
+        for(auto x : ans) {
+            for(auto y : x) {
+                cout << y << " ";
+            } cout << endl;
+        }
     }
 }

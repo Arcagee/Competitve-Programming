@@ -48,6 +48,25 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        int k;
+        cin >> n >> k;
+        string s;
+        cin >> s;
+        map<char, int> mp;
+        for(auto x : s) mp[x]++;
+        int evenPairs = 0, odd = 0;
+        for(auto x : mp) {
+            evenPairs += (x.second)/2;
+            odd += x.second % 2;
+        }
+        
+        int remPairs = evenPairs % k, reqPairs = evenPairs - remPairs;
+        odd += remPairs * 2;
+        int ans = 2 * reqPairs/k;
+        if(odd >= k) {
+            ans++;
+        }
+
+        cout << ans << endl;
     }
 }

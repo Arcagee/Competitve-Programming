@@ -41,13 +41,25 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 const int INF = 1e18;
 const int MOD = 1000000007;
  
- 
- 
 signed main() {
     tsukuyomi
     int t = 1, n;
-    cin >> t;
+    // cin >> t;
     while(t--) {
-        ;
+        string s;
+        cin >> s;
+        map<char, int> mp;
+        for(auto x : s) {
+            mp[x]++;
+        }
+        
+        int cnt = 0;
+        for(auto x : mp) {
+            if(x.second % 2 != 0) cnt++;
+        }
+        
+        if(cnt > 0 && cnt % 2 == 0) {
+            cout << "Second" << endl;
+        } else cout << "First" << endl;
     }
 }

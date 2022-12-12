@@ -48,6 +48,26 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        int a, b;
+        ip a >> b;
+        
+        int x = (a + b)/2;
+        int y = (a + b) - x;
+
+        set<int> ans;
+        for(int i = 0; i <= min(a, x); i++) {
+            if(x - i <= b) {
+                ans.insert((x - i) + (a - i));
+            }
+        }
+
+        for(int i = 0; i <= min(a, y); i++) {
+            if(y - i <= b) {
+                ans.insert((y - i) + (a - i));
+            }
+        }
+        op ans.size() << endl;
+        for(auto x : ans) op x << " ";
+        op endl;
     }
 }

@@ -48,6 +48,42 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        int a, b, p;
+        ip a >> b >> p;
+        string s; ip s;
+        n = s.size();
+        char curr = s[0];
+        vector<int> cost(n);
+        vector<int> breaks;
+        int total = 0;
+        for(int i = 0; i < n; i++) {
+            if(curr == s[i]) {
+                cost[i] = (curr == 'A') ? a : b;
+            } else {
+                total += cost[i - 1];
+                curr = s[i];
+                cost[i] = (curr == 'A') ? a : b;
+                breaks.pb(i);
+            }
+        }
+        if(n > 1 && s[n - 1] == s[n - 2]) {
+             total += cost[n - 1];
+        }
+        // deb(cost, total, breaks);
+        if(total <= p) {
+            cout << 1 << endl;
+        } else {
+            int ans = n;
+            for(auto x : breaks) {
+                total -= cost[x - 1];
+                if(total == 0) break;
+                if(total <= p) {
+                    ans = x + 1;
+                    break;
+                }
+            }
+
+            cout << ans << endl;
+        }
     }
 }

@@ -48,6 +48,27 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        int a, b, k;
+        cin >> a >> b >> k;
+        map<int, int> mp1, mp2;
+        vi boy(k), girl(k);
+        for(int i = 0; i < k; i++) {
+            cin >> boy[i];
+            mp1[boy[i]]++;
+        }
+
+        for(int i = 0; i < k; i++) {
+            cin >> girl[i];
+            mp2[girl[i]]++;
+        }
+
+        int ans = 0;
+        for(int i = 0; i < k; i++) {
+            int tot = k - 1;
+            if(mp1[boy[i]] && mp2[girl[i]])
+                ans += tot - (mp1[boy[i]] - 1 + mp2[girl[i]] - 1);
+        }
+
+        cout << ans/2 << endl;
     }
 }

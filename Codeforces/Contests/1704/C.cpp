@@ -48,6 +48,46 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        int m;
+        cin >> n >> m;
+        vi a(m);
+
+        for(int i = 0; i < m; i++) {
+            ip a[i];
+        }
+        sort(all(a));
+        vi diff;
+        diff.pb(n + a[0] - a[m - 1] - 1);
+        for(int i = 0; i < m - 1; i++) {
+            diff.pb((a[i + 1] - a[i] - 1));
+        }        
+        sort(all(diff));
+        int foo = 0, sub = 0;
+        for(int i = diff.size() - 1; i >= 0; --i) {
+            diff[i] -= sub;
+            if(diff[i] <= 0) continue;
+            if(diff[i] == 1 || diff[i] == 2) {
+                sub += 2;
+                foo += 1;
+            } else {
+                foo += diff[i] - 1;
+                sub += 4;
+            }
+        }
+        cout << n - foo << endl;
+        // while(!diff.empty()) {
+        //     int ele = diff.back();
+        //     if(ele >= 1) {
+        //         for(int i = 0; i < diff.size() - 1; i++) {
+        //             ans += min(4ll, diff[i]);
+        //             if(diff[i] < 4) diff[i] = 0;
+        //             else diff[i] -= 4;
+        //         }
+        //         if(ele > 1)
+        //             ans++;
+        //     } 
+        //     diff.pop_back();
+        // }
+
     }
 }

@@ -69,6 +69,5 @@ signed main() {
                 op max(op1, op2) << endl;
             }
         }
-
     }
 }

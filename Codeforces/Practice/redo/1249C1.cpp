@@ -48,6 +48,20 @@ signed main() {
     int t = 1, n;
     cin >> t;
     while(t--) {
-        ;
+        ip n;
+        while(true) {
+            int temp = n;
+            bool ok = true;
+            while(temp > 0 && ok) {
+                if(temp % 3 == 2) ok = false;
+                temp /= 3;
+            }
+
+            if(ok) {
+                cout << n << endl;
+                break;
+            }
+            n++;
+        }
     }
 }
